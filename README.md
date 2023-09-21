@@ -1,5 +1,6 @@
 IIIC-JORGESAYEGH-Tienda
-#Hola profe este es el readme.
+<br>
+Hola profe este es el readme.
 <br>
 El mavenproject es lo que habiamos hecho en la clase 1, "Es decir ya no sirve", pero de momento no lo he borrado.
 <br>
