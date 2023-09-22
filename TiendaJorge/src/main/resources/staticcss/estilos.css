@@ -1,0 +1,21 @@
+header{
+    position: fixed;
+    background-color: blue;
+    top:0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+}
+aside{
+    position: fixed;
+    background-color: red;
+    top: 80px;
+    left: 0;
+    height: 100%;
+    width: 20%;
+}
+a{
+    font-size: 20px;
+    color: black;
+    font-style: italic;
+}
