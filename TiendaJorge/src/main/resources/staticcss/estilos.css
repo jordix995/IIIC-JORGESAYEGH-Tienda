@@ -19,3 +19,11 @@ a{
     color: black;
     font-style: italic;
 }
+section{
+    position: fixed;
+    background-color: green;
+    top: 80px;
+    left: 20%;
+    height: 100%;
+    width: 80%;
+}
