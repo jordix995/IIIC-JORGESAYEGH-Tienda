@@ -35,6 +35,7 @@ dependencies {
     implementation 'org.webjars:jquery:3.6.0'
     implementation 'org.webjars:webjars-locator-core:0.47'
     implementation 'org.webjars:popper.js:2.11.6'
+    implementation 'mysql:mysql-connector-java:8.0.27'
 }
 
 tasks.named('test') {
