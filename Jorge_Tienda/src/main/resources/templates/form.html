@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>TechShop</title>
+</head>
+<body>
+    <header th:replace="~{layout/plantilla :: header}"/>
+        <div class="container">
+            <aside>
+                <div id="home"><h1>HOME</h1></div>
+                <h1>El producto mas vendido</h1>
+                <p>Segun los datos del mes pasado el producto Aero 20 fue el que registré6 mas ventas el mes anterior</p>
+            </aside>
+            <section>
+                <h1>Contacto</h1>
+                    <center>
+                    	<form>
+                    		<input type="text" name="user" placeholder="Usuario" required>
+                    		<input type="password" name="password" placeholder="Contraseña" required>
+                    		<input type="name" name="name" placeholder="Nombre" required>
+                    		<input type="color" name="color" placeholder="Color preferido" required>
+                    		<input type="file" name="file" placeholder="No file chosen" required>
+                    		<input type="phone" name="phone" placeholder="Telefono" required>
+                    		<input type="url" name="url" placeholder="Sitio web" required>
+                    		<input type="number" name="salary" placeholder="Rango salarial" required>
+                    		<input type="submit">
+                    	</form>
+                    </center>
+            </section>
+        </div>
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>
