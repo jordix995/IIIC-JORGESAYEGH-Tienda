@@ -33,7 +33,7 @@ public class ProductoController {
     
     @GetMapping("/listado")
     private String listado(Model model) {
-        var productos = productoService.getProducto(false);
+        var productos = productoService.getProductos(false);
         model.addAttribute("productos", productos);
         
         var categorias = categoriaService.getCategorias(false);

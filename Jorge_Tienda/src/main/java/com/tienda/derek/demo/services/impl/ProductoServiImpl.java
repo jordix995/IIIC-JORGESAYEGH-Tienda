@@ -4,45 +4,55 @@
  */
 package com.tienda.derek.demo.services.impl;
 import com.tienda.derek.demo.dao.ProductoDao;
-import com.tienda.derek.demo.domain.Categoria;
 import com.tienda.derek.demo.domain.Producto;
 import com.tienda.derek.demo.services.ProductoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 @Service
 public class ProductoServiImpl implements ProductoService {
-
-     @Autowired
-    private ProductoDao ProductoDao;
-     @Override
+    @Autowired
+    private ProductoDao productoDao;
+    @Override
     @Transactional(readOnly = true)
-    public List<Producto> getProducto(boolean activos) {
-        var lista = ProductoDao.findAll();
+    public List<Producto> getProductos(boolean activos) {
+        var lista = productoDao.findAll();
         if (activos) {
             lista.removeIf(e -> !e.isActivo());
         }
         return lista;
     }
-
     @Override
     @Transactional(readOnly = true)
     public Producto getProducto(Producto producto) {
-        return ProductoDao.findById(producto.getIdProducto()).orElse(null);
+        return productoDao.findById(producto.getIdProducto()).orElse(null);
     }
-
     @Override
     @Transactional
     public void save(Producto producto) {
-        ProductoDao.save(producto);
+        productoDao.save(producto);
     }
-
     @Override
     @Transactional
     public void delete(Producto producto) {
-        ProductoDao.delete(producto);
+        productoDao.delete(producto);
     }
-    
+    // Lista de productos con precio entre ordendados por descripción ConsultaAmpliada
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
+        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoNativo(double precioInf, double precioSup) {
+        return productoDao.metodoNativo(precioInf, precioSup);
+    }
+
 }
