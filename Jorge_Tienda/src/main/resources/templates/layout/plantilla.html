@@ -37,6 +37,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/logout}">[[#{plantilla.logout}]]</a></li>
+                           <li class="nav-item text-white my-auto" sec:authorize="isAuthenticated()">
+                        <img th:src="@{${session.usuarioImagen}}" alt="your image" height="40" class="rounded-circle"/>
+                    <span sec:authentication='name'>Santi</span>
+                </li>
                         </ul>
                         <div class="col-md-3">
                             <ul class="navbar-nav">                                
